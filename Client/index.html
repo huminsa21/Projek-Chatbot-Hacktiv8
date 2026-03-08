@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Assistant PMB - Unika Santo Thomas Medan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="chat-wrapper">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="header-avatar">
+        <img src="https://upload.wikimedia.org/wikipedia/id/thumb/2/20/Logo_Unika_Santo_Thomas_Medan.png/200px-Logo_Unika_Santo_Thomas_Medan.png"
+             alt="Logo Unika" onerror="this.style.display='none'" />
+      </div>
+      <div class="header-info">
+        <h1>Virtual Assistant PMB</h1>
+        <span class="status"><span class="dot"></span>Universitas Katolik Santo Thomas Medan</span>
+      </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div class="bubble">
+          Hai! 👋 Selamat datang di PMB Universitas Katolik Santo Thomas Medan!<br/><br/>
+          Aku siap bantu kamu cari informasi jurusan, biaya kuliah, atau cara daftar.
+          Mau tanya tentang apa nih? 😊
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Suggestions -->
+    <div class="suggestions" id="suggestions">
+      <button onclick="sendSuggestion('Apa saja fakultas yang tersedia?')">🎓 Fakultas</button>
+      <button onclick="sendSuggestion('Bagaimana cara mendaftar?')">📝 Cara Daftar</button>
+      <button onclick="sendSuggestion('Berapa biaya pendaftaran?')">💰 Biaya</button>
+      <button onclick="sendSuggestion('Di mana lokasi kampus?')">📍 Lokasi</button>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input">
+      <textarea
+        id="userInput"
+        placeholder="Ketik pertanyaanmu di sini..."
+        rows="1"
+        onkeydown="handleKeyDown(event)"
+        oninput="autoResize(this)"
+      ></textarea>
+      <button id="sendBtn" onclick="sendMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
